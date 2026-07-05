@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://puchala-strony.pl/sitemap.xml

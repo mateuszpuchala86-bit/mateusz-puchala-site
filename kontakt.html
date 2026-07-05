@@ -5,11 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Kontakt · Mateusz Puchała — strony internetowe Kielce</title>
 <meta name="description" content="Napisz w kilku zdaniach czym się zajmujesz — wrócę tego samego dnia z konkretną wyceną i terminem. Kielce, woj. świętokrzyskie." />
-<link rel="canonical" href="/kontakt.html" />
+<link rel="canonical" href="https://puchala-strony.pl/kontakt.html" />
 <meta property="og:title" content="Kontakt · Mateusz Puchała" />
 <meta property="og:description" content="Napisz — odpowiadam tego samego dnia." />
 <meta property="og:type" content="website" />
-<meta property="og:image" content="images/og-image.jpg" />
+<meta property="og:url" content="https://puchala-strony.pl/kontakt.html" />
+<meta property="og:image" content="https://puchala-strony.pl/images/og-image.jpg" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -50,32 +51,31 @@
 
       <!--
         ============================================================
-        FORMULARZ KONTAKTOWY — jak to podpiąć żeby wysyłał maile:
+        FORMULARZ KONTAKTOWY — Formspree
         ============================================================
-        Sam HTML formularza NIE wyśle maila — potrzebujesz backendu.
-        Wybierz JEDNĄ z 3 opcji poniżej i podmień atrybut action:
+        Krok 1: Załóż darmowe konto na https://formspree.io
+        Krok 2: Utwórz nowy formularz i skopiuj swój endpoint,
+                np. https://formspree.io/f/xyzabcde
+        Krok 3: Wklej ten adres poniżej w atrybut action="..."
+                (podmień TWOJ_ID w linijce niżej).
+        Krok 4: Pierwszy test — wyślij wiadomość ze swojej strony,
+                potwierdź adres mailowy w mailu od Formspree.
+                Od tego momentu wiadomości trafiają prosto na Twój mail.
 
-        1) mailto: (najprościej, ale otwiera program pocztowy klienta)
-           action="mailto:twoj@email.pl"
-           method="post" enctype="text/plain"
-
-        2) FORMSPREE — darmowe do 50 wiadomości/msc, poleca się
-           - Zarejestruj się na https://formspree.io
-           - Utwórz formularz, dostaniesz URL typu:
-             https://formspree.io/f/xyzabcde
-           - Wklej ten URL jako action i method="post"
-
-        3) NETLIFY FORMS (jeśli hostujesz na Netlify)
-           - Dodaj do <form> atrybut: netlify
-           - Dodaj ukryte pole: <input type="hidden" name="form-name" value="kontakt">
-           - Reszta działa automatycznie
-
-        Poniżej domyślnie mam mailto: — od razu działa lokalnie,
-        ale UX jest średni. Formspree polecam docelowo.
+        Darmowy plan: do 50 wiadomości/miesiąc. Wystarczy z zapasem.
         ============================================================
       -->
 
-      <form id="formularz" action="mailto:twoj@email.pl" method="post" enctype="text/plain">
+      <form id="formularz"
+            action="https://formspree.io/f/TWOJ_ID"
+            method="POST">
+
+        <!-- Ukryte pola dla Formspree -->
+        <input type="hidden" name="_subject" value="Nowe zapytanie z puchala-strony.pl" />
+        <input type="hidden" name="_language" value="pl" />
+        <!-- Honeypot — chroni przed botami, zostaw jak jest -->
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+
         <div class="form-row">
           <div class="form-field">
             <label for="imie">Imię</label>
@@ -104,10 +104,10 @@
             <label for="budzet">Orientacyjny budżet</label>
             <select id="budzet" name="budzet">
               <option value="">— wybierz —</option>
-              <option>do 1500 zł</option>
-              <option>1500 - 3000 zł</option>
-              <option>3000 - 5000 zł</option>
-              <option>powyżej 5000 zł</option>
+              <option>do 1000 zł</option>
+              <option>1000 - 2000 zł</option>
+              <option>2000 - 3000 zł</option>
+              <option>powyżej 3000 zł</option>
               <option>nie wiem jeszcze</option>
             </select>
           </div>
@@ -129,19 +129,16 @@
         <div class="info-row">
           <div class="info-label">E-mail</div>
           <a href="mailto:kontakt@puchala-strony.pl">kontakt@puchala-strony.pl</a>
-          <!-- UZUPEŁNIJ: podmień na prawdziwy adres -->
         </div>
 
         <div class="info-row">
           <div class="info-label">Telefon</div>
-          <a href="tel:+48754576507">+48 784 576 507</a>
-          <!-- UZUPEŁNIJ: podmień na prawdziwy numer -->
+          <a href="tel:+48784576507">+48 784 576 507</a>
         </div>
 
         <div class="info-row">
           <div class="info-label">WhatsApp</div>
-          <a href="https://wa.me/48754576507" target="_blank" rel="noopener">Napisz na WhatsApp</a>
-          <!-- UZUPEŁNIJ: podmień numer w linku (bez +) -->
+          <a href="https://wa.me/48784576507" target="_blank" rel="noopener">Napisz na WhatsApp</a>
         </div>
 
         <div class="info-row">
