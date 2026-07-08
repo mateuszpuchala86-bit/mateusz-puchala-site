@@ -596,6 +596,14 @@ a.project:hover h3 { color: var(--accent-ink, var(--ink)); }
   border-color: var(--ink);
 }
 .form-field textarea { min-height: 130px; resize: vertical; }
+.form-status {
+  margin-top: 16px;
+  padding: 12px 14px;
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+}
+.form-status--success { background: rgba(232,184,74,0.2); color: var(--ink); }
+.form-status--error { background: rgba(200,60,40,0.12); color: #8a2d1c; }
 .form-row {
   display: grid;
   grid-template-columns: 1fr;

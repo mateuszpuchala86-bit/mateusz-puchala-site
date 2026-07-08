@@ -57,7 +57,7 @@
         <input type="hidden" name="_subject" value="Nowe zapytanie z puchala-strony.pl" />
         <input type="hidden" name="_language" value="pl" />
         <!-- Honeypot — chroni przed botami, zostaw jak jest -->
-        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+        <input type="text" name="_gotcha" style="position:absolute;left:-9999px" tabindex="-1" autocomplete="off" />
 
         <div class="form-row">
           <div class="form-field">
@@ -104,6 +104,8 @@
         <button type="submit" class="btn btn-primary">Wyślij wiadomość
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
         </button>
+
+        <p class="form-status" role="status" aria-live="polite" hidden></p>
       </form>
 
       <aside class="contact-info">
